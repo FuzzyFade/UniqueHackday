@@ -6,6 +6,7 @@ import Home from './pages/home'
 import Follow from './pages/follow'
 import Register from './pages/register'
 import Message from './pages/message'
+import Collection from './pages/collection'
 
 
 function Routers() {
@@ -16,6 +17,7 @@ function Routers() {
       <Route exact path="/register/" component={Register} />
       <Route exact path="/follow/" component={Follow} />
       <Route exact path="/message/" component={Message} />
+      <Route exact path="/collection/" component={Collection} />
     </Router>
   )
 }
