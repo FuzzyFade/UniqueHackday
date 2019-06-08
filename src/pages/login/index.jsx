@@ -10,6 +10,7 @@ import {
 } from "./style"
 import { Input } from 'antd';
 import { Link } from 'react-router-dom';
+import {actionCreator} from './store'
 
 
 class Login extends Component {
@@ -22,30 +23,44 @@ class Login extends Component {
               <Input
                placeholder=" 手机号"
                maxLength={11}
+               onChange={ (e)=> { this.props.onChangeUsername(e) }}
               />
             </InputStyle>
             <InputStyle>
-              <Input.Password placeholder=" 密码" />
+              <Input.Password placeholder=" 密码" onChange={ (e)=> { this.props.onChangePassword(e) }}/>
             </InputStyle>
             
             <LinkContent>
               <Link to="/" >注册</Link>
               <Link to="/" >忘记了密码?</Link>
             </LinkContent>
-          <Button>按钮</Button>
+          <Button onClick={ () => (this.props.login(this.props.username, this.props.password))}>按钮</Button>
          </Content>
         </Wrapper>
 
     );
   }
+ 
 }
 
 const mapStateToProps = state => ({
-  text: state.login.text
+    username: state.login.username,
+    password: state.login.password,
+    token: state.login.token,
 })
 
 const mapDispatchToProps = dispatch => ({
-  
+  login(username, password) {
+    console.log(username)
+    console.log(password)
+    dispatch(actionCreator.loginAsynAction(username, password))
+  },
+  onChangeUsername(e) {
+    dispatch(actionCreator.onUsernameChangeAction(e.target.value))
+  },
+  onChangePassword(e) {
+    dispatch(actionCreator.onPasswordChangeAction(e.target.value))
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
