@@ -21,7 +21,9 @@ import {
   Wrapper
 } from './style'
 import {Avatar, Card, Icon} from 'antd'
+import {Redirect} from 'react-router-dom'
 import 'antd/dist/antd.css';
+import {actionCreator} from "./store";
 
 class Mine extends Component {
   constructor(props) {
@@ -33,6 +35,7 @@ class Mine extends Component {
   }
 
   componentDidMount() {
+    this.props.postList(this.props.token);
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -45,7 +48,8 @@ class Mine extends Component {
   }
 
   render() {
-    const {username, avatar} = this.props;
+    const {username, head_pic, token} = this.props;
+    const {idea, star, follower, followed, finish} = this.props;
     const {valueY} = this.state;
     return (
       <Wrapper>
@@ -59,7 +63,7 @@ class Mine extends Component {
             <UserLayOut>
               <UserContainer>
                 <Avatar
-                  src={"https://exqlnet-note.oss-cn-shenzhen.aliyuncs.com/star/" + avatar + ".png"}
+                  src={"https://exqlnet-note.oss-cn-shenzhen.aliyuncs.com/star/" + head_pic + ".png"}
                   size={96}
                   style={{
                     margin: '8px',
@@ -71,9 +75,9 @@ class Mine extends Component {
                 </Name>
               </UserContainer>
               <ItemContainer>
-                  <SonNumber>3</SonNumber>
+                  <SonNumber>{finish}</SonNumber>
                   <Line>/</Line>
-                  <MomNumber>30</MomNumber>
+                  <MomNumber>{idea}</MomNumber>
               </ItemContainer>
             </UserLayOut>
             <Circle na={(210 - valueY) / 210}/>
@@ -88,22 +92,22 @@ class Mine extends Component {
               <CardItem>
                 <Icon type="bulb" style={{fontSize: `33px`}} theme="twoTone"/>
                 <CardText>ideas</CardText>
-                <Num>13</Num>
+                <Num>{idea}</Num>
               </CardItem>
               <CardItem>
                 <Icon type="star" style={{fontSize: `33px`}} theme="twoTone"/>
                 <CardText>stars</CardText>
-                <Num>33</Num>
+                <Num>{star}</Num>
               </CardItem>
               <CardItem>
                 <Icon type="like" style={{fontSize: `33px`}} theme="twoTone"/>
                 <CardText>关注</CardText>
-                <Num>17</Num>
+                <Num>{follower}</Num>
               </CardItem>
               <CardItem>
                 <Icon type="heart" style={{fontSize: `33px`}} theme="twoTone"/>
                 <CardText>粉丝</CardText>
-                <Num>21</Num>
+                <Num>{followed}</Num>
               </CardItem>
             </CardContainer>
           </Card>
@@ -112,17 +116,27 @@ class Mine extends Component {
             </div>
           </Card>
         </MainContent>
+        {/*{token === '' && <Redirect to="/" />}*/}
       </Wrapper>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  text: state.mine.text,
   username: state.mine.username,
-  avatar: state.mine.avatar
-})
+  head_pic: state.mine.head_pic,
+  token: state.login.token,
+  idea: state.mine.idea,
+  star: state.mine.star,
+  follower: state.mine.follower,
+  followed: state.mine.followed,
+  finish: state.mine.finish,
+});
 
-const mapDispatchToProps = dispatch => ({})
+const mapDispatchToProps = dispatch => ({
+  postList(token) {
+    dispatch(actionCreator.setListAction(token))
+  },
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Mine)
