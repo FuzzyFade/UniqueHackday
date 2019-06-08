@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {
-  Avatar,
   CardContainer,
   CardItem,
   CardText,
@@ -14,28 +13,59 @@ import {
   Navigation,
   Num,
   SonNumber,
-  TopContent,
   TopLayOut,
+  TopNav,
   UserContainer,
+  UserContent,
   UserLayOut,
   Wrapper
 } from './style'
-import {Card, Icon} from 'antd'
+import {Avatar, Card, Icon} from 'antd'
 import 'antd/dist/antd.css';
 
 class Mine extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      valueY: 0
+    };
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    this.setState({valueY: window.scrollY});
+  }
+
   render() {
-    const {username} = this.props;
+    const {username, avatar} = this.props;
+    const {valueY} = this.state;
     return (
       <Wrapper>
-        <TopLayOut>
-          <TopContent>
-            <Navigation>
-              <Icon type="left" style={{color: `#fff`, fontSize: `22px`, marginLeft: `8px`}}/>
-            </Navigation>
+        <TopNav style={{display: valueY <= 210 && 'none'}}>
+          <Icon type="left" style={{color: `#fff`, fontSize: `22px`, margin: `0 8px`}}/>
+          <Name>{username}</Name>
+          <div style={{width: 38, height: 22}}/>
+        </TopNav>
+        <TopLayOut style={{display: valueY > 210 && 'none'}}>
+          <UserContent placeTop={valueY}>
             <UserLayOut>
               <UserContainer>
-                <Avatar/>
+                <Avatar
+                  src={"https://exqlnet-note.oss-cn-shenzhen.aliyuncs.com/star/" + avatar + ".png"}
+                  size={96}
+                  style={{
+                    margin: '8px',
+                    border: '2px solid #ccd7e7',
+                    borderRadius: '100px'
+                  }}/>
                 <Name>
                   {username}
                 </Name>
@@ -46,11 +76,14 @@ class Mine extends Component {
                 <MomNumber>30</MomNumber>
               </ItemContainer>
             </UserLayOut>
-          </TopContent>
-          <Circle/>
+            <Circle na={(210 - valueY) / 210}/>
+          </UserContent>
+          <Navigation>
+            <Icon type="left" style={{color: `#fff`, fontSize: `22px`, marginLeft: `8px`}}/>
+          </Navigation>
         </TopLayOut>
         <MainContent>
-          <Card style={{width: 300,borderRadius: '10px'}}>
+          <Card style={{marginTop: 300, width: 300, borderRadius: '10px', marginBottom: '15px'}}>
             <CardContainer>
               <CardItem>
                 <Icon type="bulb" style={{fontSize: `33px`}} theme="twoTone"/>
@@ -74,6 +107,10 @@ class Mine extends Component {
               </CardItem>
             </CardContainer>
           </Card>
+          <Card style={{width: 300, borderRadius: '10px', marginBottom: '15px'}}>
+            <div style={{height: 1000}}>
+            </div>
+          </Card>
         </MainContent>
       </Wrapper>
     );
@@ -82,7 +119,8 @@ class Mine extends Component {
 
 const mapStateToProps = state => ({
   text: state.mine.text,
-  username: state.mine.username
+  username: state.mine.username,
+  avatar: state.mine.avatar
 })
 
 const mapDispatchToProps = dispatch => ({})

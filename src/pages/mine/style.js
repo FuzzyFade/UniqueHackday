@@ -6,30 +6,18 @@ const theme = {
 }
 
 export const Wrapper = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   background: #efefef;
 `
 
-export const Avatar = styled.div`
-  width: 100px;
-  height: 100px;
-  border: 2px solid #ccd7e7;
-  border-radius: 100px;
-  background: url("https://raw.githubusercontent.com/FuzzyFade/CodeGame/master/src/assets/avatars/2.png");
-  background-size: 96px;
-`
-
 export const Name = styled.div`
-  margin: 16px auto 0 auto ;
   font-size: 16px;
   color: #fff;
 `
 
 export const Navigation = styled.div`
+  position: absolute;
+  top: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   height: 45px;
@@ -40,14 +28,16 @@ export const UserContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 220px;
+  transform: translateZ(0);
 `
 
 export const UserLayOut = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 15px
+  padding: 60px 15px 15px 15px;
+  margin-top: -1px;
+  background: ${theme.mainColor};
 `
 
 export const SonNumber = styled.div`
@@ -63,7 +53,7 @@ export const MomNumber = styled.div`
 export const Line = styled.div`
   color: #fff;
   font-size: 17px;
-  margin: 8px 0;
+  margin: 2px 0;
 `
 
 export const ItemContainer = styled.div`
@@ -75,16 +65,12 @@ export const ItemContainer = styled.div`
   width: 50px;
 `
 
-export const TopContent = styled.div`
-  background: ${theme.mainColor};
-`
-
 export const Circle = styled.div`
   margin: 0 -25px 0 -25px;
   height: 90px;
   margin-top: -1px;
+  border-radius: 50% / 0 0 ${props => props.na*100}% ${props => props.na*100}%;
   background: ${theme.mainColor};
-  border-radius: 50% / 0 0 100% 100%;
 `
 
 export const TopLayOut = styled.div`
@@ -94,9 +80,9 @@ export const TopLayOut = styled.div`
 `
 
 export const MainContent = styled.div`
-  margin-top: 340px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   filter: drop-shadow(0 6px 12px rgba(149,149,149,0.5));
 `
 
@@ -124,4 +110,20 @@ export const CardText = styled.div`
   margin-top: 4px;
   margin-bottom: 8px;
   color: #969696
+`
+
+export const TopNav = styled.div`
+  position: fixed;
+  z-index: 12;
+  width: 100%;
+  height: 45px;
+  background: ${theme.mainColor};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  filter: drop-shadow(0 6px 12px rgba(149,149,149,0.6));
+`
+
+export const UserContent = styled.div`
+  transform: translate(0,${props=>-1.6*props.placeTop}px)
 `
