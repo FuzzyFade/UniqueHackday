@@ -4,6 +4,7 @@ import {
   ON_CHANGE_PHONE,
   SET_TOKEN,
   ON_CHANGE_VERIFYCODE,
+  SET_STATUS,
 } from './constants'
 
 const defaultState = {
