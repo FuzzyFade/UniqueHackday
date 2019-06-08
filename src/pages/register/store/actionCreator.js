@@ -4,7 +4,7 @@ import {
   ON_CHANGE_VERIFYCODE,
   ON_CHANGE_PHONE,
   SET_TOKEN,
-  SET_STATUS
+  SET_STATUS,
 } from './constants'
 
 // import {get} from '../../../lib/common'

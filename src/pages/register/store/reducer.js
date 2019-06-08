@@ -12,7 +12,7 @@ const defaultState = {
   username: '',
   password: '',
   phone: '',
-  vcode: ''
+  vcode: '',
 }
 
 export default (state = defaultState, action) => {
@@ -32,6 +32,9 @@ export default (state = defaultState, action) => {
       return newState
     case SET_TOKEN:
       newState.token = action.value
+      return newState
+    case SET_STATUS:
+      newState.status = action.value
       return newState
     default:
       return newState
