@@ -19,7 +19,6 @@ class ItemList extends Component {
             )
           })
         }
-        <NewCircle>+</NewCircle>
       </ItemListWarpper>
     )
   }

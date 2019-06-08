@@ -1,53 +1,61 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import React, {Component} from 'react';
+import {connect} from 'react-redux'
 import {
-  Wrapper,
-  Content,
-  Logo,
-  InputStyle,
   Button,
+  Content,
+  InputStyle,
   LinkContent,
+  Logo,
+  Wrapper
 } from "./style"
 import { Input } from 'antd';
 import { Link, Redirect } from 'react-router-dom';
 import {actionCreator} from './store'
 
+const { Password } = Input;
 
 class Login extends Component {
   render() {
+    const {username, password} = this.props;
     return (
-        <Wrapper>
-         <Content>
-           <Logo></Logo>
-            <InputStyle>
-              <Input
-               placeholder=" 手机号"
-               maxLength={11}
-               onChange={ (e)=> { this.props.onChangeUsername(e) }}
-              />
-            </InputStyle>
-            <InputStyle>
-              <Input.Password placeholder=" 密码" onChange={ (e)=> { this.props.onChangePassword(e) }}/>
-            </InputStyle>
-            
-            <LinkContent>
-              <Link to="/register/" >注册</Link>
-              <Link to="/" >忘记了密码?</Link>
-            </LinkContent>
-          <Button onClick={ () => (this.props.login(this.props.username, this.props.password))}>按钮</Button>
-         </Content>
-         {this.props.token && <Redirect to="/home/"></Redirect>}
-        </Wrapper>
-
+      <Wrapper>
+        <Content>
+          <Logo/>
+          <InputStyle style={{marginBottom: '26px'}}>
+            <Input
+              placeholder="手机号"
+              maxLength={11}
+              onChange={(e) => this.props.onChangeUsername(e)}
+            />
+          </InputStyle>
+          <InputStyle style={{marginBottom: '20px'}}>
+            <Password
+              placeholder="密码"
+              onChange={(e) => {this.props.onChangePassword(e)}}/>
+          </InputStyle>
+          <LinkContent>
+            <Link to="/register/">
+              <span style={{color: '#5269DA'}}>快速注册</span>
+            </Link>
+            <Link to="/">
+              <span style={{color: '#717171'}}>忘记了密码？</span>
+            </Link>
+          </LinkContent>
+          <Button onClick={() => (
+            this.props.login(username, password)
+          )}>登录</Button>
+        </Content>
+        {this.props.token && <Redirect to="/home/"></Redirect>}
+      </Wrapper>
     );
   }
- 
+
 }
 
 const mapStateToProps = state => ({
-    username: state.login.username,
-    password: state.login.password,
-    token: state.login.token,
+  username: state.login.username,
+  password: state.login.password,
+  token: state.login.token
 })
 
 const mapDispatchToProps = dispatch => ({

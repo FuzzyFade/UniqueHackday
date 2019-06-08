@@ -13,7 +13,7 @@ class New extends Component {
       <Warpper>
         <Header>
           <Icon type="left" style={{ fontSize: '24px', color: '#fff', marginLeft: '16px'}}/>
-          <HeaderTitle>我关注的</HeaderTitle>
+          <HeaderTitle></HeaderTitle>
         </Header>
       </Warpper>
     );

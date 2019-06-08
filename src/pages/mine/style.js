@@ -40,29 +40,27 @@ export const UserLayOut = styled.div`
   background: ${theme.mainColor};
 `
 
-export const SonNumber = styled.div`
-  font-size: 20px;
+export const SonNumber = styled.span`
+  font-size: 29px;
   color: #fff;
 `
 
-export const MomNumber = styled.div`
-  font-size: 24px;
+export const MomNumber = styled.span`
+  font-size: 38px;
   color: #fff;
 `
 
 export const Line = styled.div`
   color: #fff;
   font-size: 17px;
-  margin: 2px 0;
+  margin: 3px 12px;
 `
 
 export const ItemContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
   height: 220px;
-  width: 50px;
 `
 
 export const Circle = styled.div`
