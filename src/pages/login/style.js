@@ -14,47 +14,48 @@ export const Wrapper = styled.div`
   align-items: center;
   background: #fff;
 `
+
 export const Content = styled.div`
-  max-width: 420px;
-  height: 60%;
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
+
 export const Logo = styled.div`
-  max-width: 320px;
-  width: 320px;
-  height: 100px;
+  width: 199px;
+  height: 59.29px;
   background: url(${logo}) center;
-  background-size: 100% 100%;
+  background-size: 100%;
   margin:0 auto 88px;
 `
-export const InputStyle = styled.div`
-  input {
-    width: 350px;
-    height: 35px;
-    padding-left: 10px;
-    border-radius: 10px;
-    margin-bottom: 50px;
-  }
-  input:focus {
-    outline: none;
-  }
 
+export const InputStyle = styled.div`
+  text-align: center;
+  max-width: 288px;
+  min-width: 280px;
 `
+
 export const LinkContent = styled.div`
-  width: 365px;
-  font-size: 18px;
+  max-width: 288px;
+  min-width: 280px;
+  font-size: 12px;
   display: flex;
   justify-content: space-between;
   a {
     text-decoration: none
   }
 `
+
 export const Button = styled.div`
-   width: 350px;
-   height: 100px;
-   margin-top: 50px;
-   border-radius: 20px;
-   line-height: 65px;
-   text-align: center;
-   background: url(${btnBg});
-   background-size: 100%; 
+  max-width: 300px;
+  min-width: 295px;
+  height: 68px;
+  margin-top: 80px;
+  line-height: 56px;
+  text-align: center;
+  background: url(${btnBg});
+  background-size: 100%; 
+  color: #fff
 `

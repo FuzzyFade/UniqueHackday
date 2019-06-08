@@ -34,24 +34,3 @@ export const HeaderRight = styled.div`
   line-height: 45px;
   margin-right: 14px;
 `
-
-export const TextTitle = styled.textarea.attrs({
-  placeholder: '请输入你的idea'
-})`
-  height: 50px;
-  width: 100%;
-  padding: 10px 16px;
-  font-size: 20px;
-  resize: none;
-`
-
-export const TextDesc = styled.textarea.attrs({
-  placeholder: '关于idea的描述'
-})`
-  height: 300px;
-  width: 100%;
-  padding: 10px 16px;
-  font-size: 16px;
-  color: #000;
-  resize: none;
-`

@@ -1,9 +1,4 @@
-import {
-  ON_CHANGE_USERNAME,
-  ON_CHANGE_PASSWORD,
-  SET_TOKEN,
-} from './constants'
-
+import {ON_CHANGE_PASSWORD, ON_CHANGE_USERNAME, SET_TOKEN,} from './constants'
 // import {get} from '../../../lib/common'
 import {post} from '../../../lib/common'
 
@@ -29,7 +24,7 @@ export const loginAsynAction = (phone, password) => {
       password
     }
     new Promise(resolve => {
-      let ret = post('/api/user/auth', data, )
+      let ret = post('/api/user/auth', data)
       resolve(ret)
     }).then(ret => {
       dispatch(setTokenAction(ret.data.token))
