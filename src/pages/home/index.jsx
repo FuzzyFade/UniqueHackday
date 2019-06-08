@@ -3,7 +3,8 @@ import { Tabs } from 'antd'
 import {
   Warpper,
   NewCircle,
-  IconWarpper
+  IconWarpper,
+  Menu
 } from './style'
 import ItemList from './components/ItemList/index'
 import { connect } from 'react-redux'
@@ -27,8 +28,9 @@ class Home extends Component {
           </TabPane>
         </Tabs>
         <IconWarpper>
-          <Icon type="align-left" />
+          <Icon type="align-left" style={{ fontSize: '20px', color: '#fff' }} />
         </IconWarpper>
+        <Menu></Menu>
         {/* Switch Tabs End */}
 
         {/* ItemList */}

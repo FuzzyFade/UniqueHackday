@@ -14,21 +14,23 @@ export const Wrapper = styled.div`
   align-items: center;
   background: #fff;
 `
+
 export const Content = styled.div`
   width: 330px;
-  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `
+
 export const Logo = styled.div`
   width: 199px;
   height: 59.29px;
   background: url(${logo}) center;
-  background-size: 100% 100%;
+  background-size: 100%;
   margin:0 auto 88px;
 `
+
 export const InputStyle = styled.div`
   text-align: center;
   max-width: 288px;
@@ -45,12 +47,13 @@ export const LinkContent = styled.div`
     text-decoration: none
   }
 `
+
 export const Button = styled.div`
   max-width: 300px;
   min-width: 295px;
   height: 68px;
   margin-top: 80px;
-  line-height: 51px;
+  line-height: 56px;
   text-align: center;
   background: url(${btnBg});
   background-size: 100%; 
