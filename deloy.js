@@ -7,8 +7,8 @@ const promisifyReaddir = util.promisify(fs.readdir)
 const promisifyStat = util.promisify(fs.stat)
 
 const ALIOSSKEY = {
-  key: '',
-  secret: ''
+  key: 'LTAIGfPhgZuWSMj6',
+  secret: 'bXR2gLNajypSo5XvaiA2g7JFxeBdGP'
 }
 
 const client = new OSS({

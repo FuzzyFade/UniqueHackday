@@ -14,89 +14,60 @@ export const Wrapper = styled.div`
   align-items: center;
   background: #fff;
 `
+
 export const Content = styled.div`
-  max-width: 420px;
-  height: 60%;
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
+
 export const Logo = styled.div`
-  max-width: 320px;
-  width: 320px;
-  height: 100px;
+  width: 199px;
+  height: 59.29px;
   background: url(${logo}) center;
-  background-size: 100% 100%;
+  background-size: 100%;
   margin:0 auto 88px;
 `
+
 export const InputStyle = styled.div`
-  input {
-    width: 350px;
-    height: 35px;
-    padding-left: 10px;
-    border-radius: 10px;
-    margin-bottom: 50px;
-  }
-  input:focus {
-    outline: none;
-  }
+  text-align: center;
+  max-width: 288px;
+  min-width: 280px;
 `
-export const InputStyles = styled.div`
-  input {
-    width: 350px;
-    height: 35px;
-    padding-left: 10px;
-    border-radius: 10px;
-    margin-bottom: 50px;
-  }
-  input:focus {
-    outline: none;
-  }
-`
-export const PwdInput = styled.div`
-  /* display: flex; */
-  span {
-    display: inline;
-  }
-  input {
-    width: 250px;
-    height: 35px;
-    padding-left: 10px;
-    border-radius: 10px;
-    margin-bottom: 50px;
-  }
-  input:focus {
-    outline: none;
-  }
-`
+
 export const SmallBtn = styled.button`
-    width: 85px;
-    height: 35px;
-    margin-left: 15px;
-    line-height: 35px;
-    text-align: center;
-    border-radius: 8px;
-    border: 1px solid #333;
-    background: white;
+  width: 85px;
+  height: 32px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: white
 `
 
-export const LinkContent = styled.div`
-  width: 365px;
-  font-size: 18px;
+export const Button = styled.div`
+  max-width: 300px;
+  min-width: 295px;
+  height: 68px;
+  margin-top: 80px;
+  line-height: 56px;
+  text-align: center;
+  background: url(${btnBg});
+  background-size: 100%; 
+  color: #fff
+`
+
+export const ConfirmCode = styled.div`
+  text-align: center;
+  max-width: 288px;
+  min-width: 280px;
   display: flex;
-  justify-content: space-between;
-  a {
-    text-decoration: none
-  }
-`
-export const firstContent = styled.div`
-  
+  align-items: center;
 `
 
-export const Btn = styled.div`
-   width: 350px;
-   height: 100px;
-   margin-top: 50px;
-   border-radius: 20px;
-   line-height: 65px;
-   text-align: center;
-   background: url(${btnBg});
-   background-size: 100%; 
+export const Text = styled.div`
+  color: #686868;
+  letter-spacing: .8px;
 `
