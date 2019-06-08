@@ -17,7 +17,7 @@ class Message extends Component {
     return (
       <Warpper>
         <Header>
-          <Icon type="left" style={{ fontSize: '24px', color: '#1a1a1a', marginLeft: '16px'}}/>
+          <Icon type="left" style={{ fontSize: '24px', color: '#eee', marginLeft: '16px'}}/>
           <HeaderTitle>我的消息</HeaderTitle>
         </Header>
 

@@ -8,13 +8,18 @@ import FollowList from './components/FollowList/index'
 import {
   Icon
 } from 'antd'
+import {
+  Link
+} from 'react-router-dom'
 
-class Follow extends Component {
+class Following extends Component {
   render() {
     return (
       <Warpper>
         <Header>
-          <Icon type="left" style={{ fontSize: '24px', color: '#1a1a1a', marginLeft: '16px'}}/>
+          <Link to="/mine/">
+            <Icon type="left" style={{ fontSize: '24px', color: '#fff', marginLeft: '16px'}}/>
+          </Link>
           <HeaderTitle>我关注的</HeaderTitle>
         </Header>
 
@@ -24,4 +29,4 @@ class Follow extends Component {
   }
 }
 
-export default Follow
+export default Following

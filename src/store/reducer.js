@@ -5,6 +5,7 @@ import { reducer as followReducer } from '../pages/follow/store'
 import {reducer as registerReducer } from '../pages/register/store'
 import { reducer as messageReducer } from '../pages/message/store'
 import { reducer as collectionReducer } from '../pages/collection/store'
+import { reducer as mineReducer } from '../pages/mine/store'
 
 const reducer = combineReducers({
   login: loginReducer,
@@ -12,7 +13,8 @@ const reducer = combineReducers({
   follow: followReducer,
   message: messageReducer,
   collection: collectionReducer,
-  register: registerReducer
+  register: registerReducer,
+  mine: mineReducer
 })
 
 export default reducer
