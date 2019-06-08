@@ -4,6 +4,7 @@ import {
   ON_CHANGE_VERIFYCODE,
   ON_CHANGE_PHONE,
   SET_TOKEN,
+  SET_STATUS
 } from './constants'
 
 // import {get} from '../../../lib/common'
@@ -33,6 +34,11 @@ export const setTokenAction = value => ({
   value
 })
 
+export const setStatusAction = value => ({
+  type: SET_STATUS,
+  value
+})
+
 export const registerAsynAction = (username, password, vcode, phone) => {
   return dispatch => {
     let data = {
@@ -45,7 +51,8 @@ export const registerAsynAction = (username, password, vcode, phone) => {
       let ret = post('/api/user/register', data, )
       resolve(ret)
     }).then(ret => {
-      dispatch(setTokenAction(ret.token))
+      dispatch(setTokenAction(ret.data.token))
+      dispatch(setStatusAction(ret.status))
     }).catch(err => {
       throw new Error(err)
     })

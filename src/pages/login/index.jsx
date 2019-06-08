@@ -8,8 +8,8 @@ import {
   Logo,
   Wrapper
 } from "./style"
-import {Input} from 'antd';
-import {Link} from 'react-router-dom';
+import { Input } from 'antd';
+import { Link, Redirect } from 'react-router-dom';
 import {actionCreator} from './store'
 
 const { Password } = Input;
@@ -45,6 +45,7 @@ class Login extends Component {
             this.props.login(username, password)
           )}>登录</Button>
         </Content>
+        {this.props.token && <Redirect to="/home/"></Redirect>}
       </Wrapper>
     );
   }

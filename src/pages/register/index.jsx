@@ -5,21 +5,20 @@ import {
   Content,
   Logo,
   InputStyle,
+  InputStyles,
   Btn,
   PwdInput,
   SmallBtn,
-  LinkContent,
 } from "./style"
-import { Input, Button } from 'antd';
-// import { Link } from 'react-router-dom';
+import { Input, message } from 'antd';
 import {actionCreator} from './store';
-import { post } from '../../lib/common'
 import axios from 'axios'
 class Register extends Component {
   constructor(props) {
     super(props)
-    this.state = {isShow: true}
+    this.state = {isShow: true, temp: ''}
     this.getVcode = this.getVcode.bind(this)
+    this.verifyPassword = this.verifyPassword.bind(this)
   }
   render() {
     return (
@@ -45,24 +44,25 @@ class Register extends Component {
              </div>
             ) : (
               <div>
-                <InputStyle>
+                <InputStyles>
                 <Input
-                 placeholder=" 昵称"
-                 onChange={ (e)=> { this.props.onChangeUsername(e) }}
+                 placeholder="  昵称"
+                 onChange={ (e) => { this.props.onChangeUsername(e) }}
                 />
-                </InputStyle>
+                </InputStyles>
                 <InputStyle>
-                <Input
+                <Input.Password
                  placeholder=" 密码"
-                 onChange={ (e)=> { this.props.onChangePassword(e) }}
+                 onChange={ (e) => { this.props.onChangePassword(e) }}
                 />
                 </InputStyle>
                 <InputStyle>
-                <Input
+                <Input.Password
                  placeholder=" 确认密码"
+                 onChange={ (e) => {this.verifyPassword(e)}}
                 />
                 </InputStyle>
-                <Btn onClick={ () => {this.props.register(this.props.username, this.props.password, this.props.vcode, this.props.phone)}}>按钮</Btn>
+                <Btn onClick={ () => {this.props.register(this.props.username, this.props.password, this.props.vcode, this.props.phone, this.state.temp)}}>按钮</Btn>
               </div>
             )
            }
@@ -74,7 +74,7 @@ class Register extends Component {
   }
   async getVcode(phone) {
     console.log("phone", phone)
-    let  data = {"phone": phone }
+    let data = {"phone": phone }
     let url = 'https://star.exql.top/api/user/msg'
     let ret = await new Promise(resolve => {
     axios({
@@ -86,6 +86,10 @@ class Register extends Component {
   })
   .then(ret => ret)
      return ret
+  }
+  verifyPassword(e) {
+    console.log("temp", e.target.value)
+    this.setState({temp: e.target.value})
   }
  
 }
@@ -99,8 +103,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  register(username, password, vcode, phone) {
+  register(username, password, vcode, phone, temp) {
     console.log("username",username, "vcode",vcode)
+    if ( temp !== password) {
+      message.info("两次密码不一致")
+    }
     dispatch(actionCreator.registerAsynAction(username, password, vcode, phone))
   },
   onChangeUsername(e) {

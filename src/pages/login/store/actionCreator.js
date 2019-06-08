@@ -22,17 +22,17 @@ export const setTokenAction = value => ({
   value
 })
 
-export const loginAsynAction = (username, password) => {
+export const loginAsynAction = (phone, password) => {
   return dispatch => {
     let data = {
-      username,
+      phone,
       password
     }
     new Promise(resolve => {
       let ret = post('/api/user/auth', data, )
       resolve(ret)
     }).then(ret => {
-      dispatch(setTokenAction(ret.token))
+      dispatch(setTokenAction(ret.data.token))
     }).catch(err => {
       throw new Error(err)
     })
