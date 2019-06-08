@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import logo from './img/logo.png';
+import btnBg from './img/btnBg.png';
 
 export const Wrapper = styled.div`
   position: absolute;
@@ -37,4 +38,23 @@ export const InputStyle = styled.div`
     outline: none;
   }
 
+`
+export const LinkContent = styled.div`
+  width: 365px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    text-decoration: none
+  }
+`
+export const Button = styled.div`
+   width: 350px;
+   height: 100px;
+   margin-top: 50px;
+   border-radius: 20px;
+   line-height: 65px;
+   text-align: center;
+   background: url(${btnBg});
+   background-size: 100%; 
 `
