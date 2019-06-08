@@ -9,6 +9,8 @@ import Message from './pages/message'
 import Collection from './pages/collection'
 import New from './pages/new'
 import Mine from './pages/mine'
+import Comment from './pages/comment'
+import Associate from './pages/associate'
 
 function Routers() {
   return (
@@ -22,6 +24,8 @@ function Routers() {
       <Route exact path="/collection/" component={Collection} />
       <Route exact path="/new/" component={New} />
       <Route exact path="/mine/" component={Mine} />
+      <Route exact path="/comment/" component={Comment} />
+      <Route exact path="/associate/" component={Associate} />
     </Router>
   )
 }

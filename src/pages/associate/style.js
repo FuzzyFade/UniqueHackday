@@ -1,12 +1,22 @@
 import styled from 'styled-components'
 
-export const Warpper = styled.div``
+export const Warpper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 export const Header = styled.div`
   height: 50px;
-  border-bottom: 1px solid #eee;
+  width: 100%;
+  /* border-bottom: 1px solid #eee; */
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   background: rgb(64,108,255);
   color: #fff;
@@ -35,23 +45,12 @@ export const HeaderRight = styled.div`
   margin-right: 14px;
 `
 
-export const TextTitle = styled.textarea.attrs({
-  placeholder: '请输入你的idea'
-})`
-  height: 50px;
+export const Blanket = styled.div`
   width: 100%;
-  padding: 10px 16px;
-  font-size: 20px;
-  resize: none;
+  flex: 1;
+  background: linear-gradient(to bottom, rgb(64, 108, 255), rgb(85, 84, 255));
 `
 
-export const TextDesc = styled.textarea.attrs({
-  placeholder: '关于idea的描述'
-})`
-  height: 300px;
-  width: 100%;
-  padding: 10px 16px;
-  font-size: 16px;
-  color: #000;
-  resize: none;
+export const ItemBubble = styled.div`
+  
 `
