@@ -9,13 +9,18 @@ import {
   Icon
 } from 'antd'
 import ItemList from './components/ItemList/index'
+import {
+  Link
+} from 'react-router-dom'
 
 class Collection extends Component {
   render() {
     return (
       <Warpper>
         <Header>
-          <Icon type="left" style={{ fontSize: '24px', color: '#fff', marginLeft: '16px'}}/>
+          <Link to="/mine/">
+            <Icon type="left" style={{ fontSize: '24px', color: '#fff', marginLeft: '16px'}}/>
+          </Link>
           <HeaderTitle>我的收藏</HeaderTitle>
         </Header>
 
