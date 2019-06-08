@@ -10,10 +10,10 @@ import {
 } from "./style"
 import { Input } from 'antd';
 import { Link } from 'react-router-dom';
-import {actionCreator} from './store'
+import {actionCreator} from './store';
 
 
-class Login extends Component {
+class Register extends Component {
   render() {
     return (
         <Wrapper>
@@ -30,10 +30,6 @@ class Login extends Component {
               <Input.Password placeholder=" 密码" onChange={ (e)=> { this.props.onChangePassword(e) }}/>
             </InputStyle>
             
-            <LinkContent>
-              <Link to="/register/" >注册</Link>
-              <Link to="/" >忘记了密码?</Link>
-            </LinkContent>
           <Button onClick={ () => (this.props.login(this.props.username, this.props.password))}>按钮</Button>
          </Content>
         </Wrapper>
@@ -44,23 +40,29 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-    username: state.login.username,
-    password: state.login.password,
-    token: state.login.token,
+    username: state.register.username,
+    password: state.register.password,
+    phone: state.register.phone,
+    vcode: state.register.vcode,
+    token: state.register.token,
 })
 
 const mapDispatchToProps = dispatch => ({
-  login(username, password) {
-    console.log(username)
-    console.log(password)
-    dispatch(actionCreator.loginAsynAction(username, password))
+  register(username, password, vcode, phone) {
+    dispatch(actionCreator.registerAsynAction(username, password, vcode, phone))
   },
   onChangeUsername(e) {
     dispatch(actionCreator.onUsernameChangeAction(e.target.value))
   },
   onChangePassword(e) {
     dispatch(actionCreator.onPasswordChangeAction(e.target.value))
+  },
+  onChangePhone(e) {
+    dispatch(actionCreator.onPhoneChangeAction(e.target.value))
+  },
+  onChangeVcode(e) {
+    dispatch(actionCreator.onVerifyChangeAction(e.target.value))
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Register)
