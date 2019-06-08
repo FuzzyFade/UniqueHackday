@@ -8,6 +8,7 @@ import {
 
 // import {get} from '../../../lib/common'
 import {post} from '../../../lib/common'
+import { message } from 'antd';
 
 
 export const onUsernameChangeAction = (value) => ({

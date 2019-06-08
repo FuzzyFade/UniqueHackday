@@ -38,6 +38,18 @@ export const InputStyle = styled.div`
     outline: none;
   }
 `
+export const InputStyles = styled.div`
+  input {
+    width: 350px;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+  input:focus {
+    outline: none;
+  }
+`
 export const PwdInput = styled.div`
   /* display: flex; */
   span {

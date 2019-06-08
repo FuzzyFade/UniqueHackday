@@ -9,7 +9,7 @@ import {
   LinkContent,
 } from "./style"
 import { Input } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import {actionCreator} from './store'
 
 
@@ -36,6 +36,7 @@ class Login extends Component {
             </LinkContent>
           <Button onClick={ () => (this.props.login(this.props.username, this.props.password))}>按钮</Button>
          </Content>
+         {this.props.token && <Redirect to="/home/"></Redirect>}
         </Wrapper>
 
     );
