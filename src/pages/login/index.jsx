@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import {
+  Wrapper
+} from "./style"
 
 class Login extends Component {
   render() {
     return (
-      <div>{this.props.text}</div>
+        <Wrapper></Wrapper>
     );
   }
 }
