@@ -6,9 +6,13 @@ import {
 } from './style'
 import { Tabs, Icon } from 'antd'
 import MessageList from './components/MessageList/index'
+import { connect } from 'react-redux'
+import { 
+  actionCreator
+} from './store'
 const { TabPane } = Tabs
 
-export default class Message extends Component {
+class Message extends Component {
   render() {
     return (
       <Warpper>
@@ -30,3 +34,16 @@ export default class Message extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+
+})
+
+const mapDispatchToProps = dispatch => ({
+  changeKey(key) {
+    console.log(key)
+    dispatch(actionCreator.changeCurrentKeyAction(key))
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Message)
