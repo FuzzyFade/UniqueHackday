@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ali-oss": "^6.1.1",
     "antd": "^3.19.2",
     "axios": "^0.19.0",
     "react": "^16.8.6",
@@ -15,6 +16,7 @@
     "styled-components": "^4.3.1"
   },
   "scripts": {
+    "deloy": "node deloy.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
