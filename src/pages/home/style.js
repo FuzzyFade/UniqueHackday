@@ -30,3 +30,18 @@ export const Warpper = styled.div`
     border-radius: 3px;
   }
 `
+
+export const NewCircle = styled.div`
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  background: rgb(64, 108, 255);
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-weight: 200;
+  font-size: 40px;
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+`
