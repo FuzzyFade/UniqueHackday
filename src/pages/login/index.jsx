@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {
   Wrapper
-} from "./style"
+} from './style'
 
 class Login extends Component {
   render() {
     return (
-        <Wrapper></Wrapper>
+      <Wrapper>
+        Login
+      </Wrapper>
     );
   }
 }
