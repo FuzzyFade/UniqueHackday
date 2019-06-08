@@ -15,7 +15,7 @@ const client = new OSS({
   region: 'oss-cn-shanghai',
   accessKeyId: ALIOSSKEY.key,
   accessKeySecret: ALIOSSKEY.secret,
-  bucket: 'icecee'
+  bucket: '020122121'
 })
 
 const publicPath = path.resolve(__dirname, './build')
