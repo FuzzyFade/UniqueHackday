@@ -9,10 +9,11 @@ export const Warpper = styled.div`
 `
 
 export const Header = styled.div`
-  height: 45px;
+  height: 50px;
   border-bottom: 1px solid #eee;
   display: flex;
   align-items: center;
+  background: rgb(64, 108, 255);
 `
 
 export const HeaderTitle = styled.div`
@@ -21,4 +22,5 @@ export const HeaderTitle = styled.div`
   font-size: 18px;
   line-height: 45px;
   margin-left: 10px;
+  color: #eee;
 `

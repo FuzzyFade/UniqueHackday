@@ -15,7 +15,7 @@ class Collection extends Component {
     return (
       <Warpper>
         <Header>
-          <Icon type="left" style={{ fontSize: '24px', color: '#1a1a1a', marginLeft: '16px'}}/>
+          <Icon type="left" style={{ fontSize: '24px', color: '#fff', marginLeft: '16px'}}/>
           <HeaderTitle>我的收藏</HeaderTitle>
         </Header>
 

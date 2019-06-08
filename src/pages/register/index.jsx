@@ -6,10 +6,8 @@ import {
   Logo,
   InputStyle,
   Button,
-  LinkContent,
 } from "./style"
 import { Input } from 'antd';
-import { Link } from 'react-router-dom';
 import {actionCreator} from './store';
 
 
