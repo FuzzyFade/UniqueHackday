@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import {
   ItemBox,
   ItemHeader,
-  ItemContent
+  ItemContent,
+  ItemAvatar,
+  ItemHeaderRight,
+  ItemName,
+  ItemTime,
+  InfoBox,
 } from './style'
 
 export default class Item extends Component {
@@ -21,10 +26,17 @@ export default class Item extends Component {
     return (
       <ItemBox
         key={this.props.item.title}
-        onTouchStart={this.touchStart}
         isDisabled={this.state.isDisabled}
       >
-        <ItemHeader>{this.props.item.title}</ItemHeader>
+        <ItemHeader>
+          <ItemHeaderRight>
+            <ItemAvatar></ItemAvatar>
+            <InfoBox>
+              <ItemName>粥结轮</ItemName>
+              <ItemTime>20分钟前</ItemTime>
+            </InfoBox>
+          </ItemHeaderRight>
+        </ItemHeader>
         <ItemContent>{this.props.item.content}</ItemContent>
       </ItemBox>
     );

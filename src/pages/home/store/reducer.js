@@ -6,8 +6,8 @@ const defaultState = {
   itemlists: [
     [
       {
-        title: 'I AM star',
-        content: 'Hello, This is content of an itemHello, This is content of an itemHello, This is content of an itemHello, This is content of an itemHello, This is content of an item'
+        title: '点子缓存功能',
+        content: '一不小心拖了一张图片进去，然而并没有拖拽功能，之前写的东西全没了。'
       },
       {
         title: 'I AM star2',

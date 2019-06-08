@@ -30,7 +30,7 @@ class Home extends Component {
         <IconWarpper>
           <Icon type="align-left" style={{ fontSize: '20px', color: '#fff' }} />
         </IconWarpper>
-        <Menu></Menu>
+        {/* <Menu></Menu> */}
         {/* Switch Tabs End */}
 
         {/* ItemList */}
