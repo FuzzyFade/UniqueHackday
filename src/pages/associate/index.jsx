@@ -5,7 +5,10 @@ import {
   Header,
   HeaderLeft,
   HeaderTitle,
-  Blanket
+  Blanket,
+  BubbleBox,
+  ItemBubble,
+  AssociateBtn
 } from './style'
 import { Icon } from 'antd'
 
@@ -19,7 +22,14 @@ class Associate extends Component {
             <HeaderTitle>联想</HeaderTitle>
           </HeaderLeft>
         </Header>
-        <Blanket></Blanket>
+        <Blanket>
+          <BubbleBox>
+            <ItemBubble>药水</ItemBubble>
+            <ItemBubble>黄头发的妹妹</ItemBubble>
+            <ItemBubble>好果汁</ItemBubble>
+          </BubbleBox>
+          <AssociateBtn>联想</AssociateBtn>
+        </Blanket>
       </Warpper>
     );
   }

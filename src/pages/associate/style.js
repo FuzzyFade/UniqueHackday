@@ -46,11 +46,36 @@ export const HeaderRight = styled.div`
 `
 
 export const Blanket = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   flex: 1;
   background: linear-gradient(to bottom, rgb(64, 108, 255), rgb(85, 84, 255));
 `
 
+export const BubbleBox = styled.div`
+  height: auto;
+  width: 100%;
+  padding: 20px 10px;
+  display: flex;
+`
+
 export const ItemBubble = styled.div`
-  
+  height: 30px;
+  padding: 3px 8px;
+  margin-right: 8px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid #eee;
+`
+
+export const AssociateBtn = styled.div`
+  height: 36px;
+  width: auto;
+  padding: 2px 10px;
+  font-size: 18px;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 20px;
 `

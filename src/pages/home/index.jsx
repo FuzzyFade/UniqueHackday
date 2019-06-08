@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Tabs } from 'antd'
 import {
   Warpper,
-  NewCircle
+  NewCircle,
+  IconWarpper
 } from './style'
 import ItemList from './components/ItemList/index'
 import { connect } from 'react-redux'
@@ -10,7 +11,7 @@ import { actionCreator } from './store'
 import {
   Link
 } from 'react-router-dom'
-
+import { Icon } from 'antd'
 const { TabPane } = Tabs
 
 class Home extends Component {
@@ -25,6 +26,9 @@ class Home extends Component {
           <TabPane tab="夜空" key="1">
           </TabPane>
         </Tabs>
+        <IconWarpper>
+          <Icon type="align-left" />
+        </IconWarpper>
         {/* Switch Tabs End */}
 
         {/* ItemList */}

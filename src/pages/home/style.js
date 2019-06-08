@@ -23,6 +23,7 @@ export const Warpper = styled.div`
   }
   .ant-tabs-tab {
    font-size: 20px;
+   color: rgb(255, 221, 111);
   }
   .ant-tabs-ink-bar {
     background: rgb(255, 236, 0);
@@ -44,4 +45,12 @@ export const NewCircle = styled.div`
   position: fixed;
   right: 20px;
   bottom: 40px;
+`
+
+export const IconWarpper = styled.div`
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
 `
