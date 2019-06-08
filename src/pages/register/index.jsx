@@ -1,12 +1,32 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux'
-import {Button, Content, InputStyle, Logo, SmallBtn, Text, Wrapper,ConfirmCode} from "./style"
-import {Input, message} from 'antd';
-import {actionCreator} from './store';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import {
+  Wrapper,
+  Content,
+  Logo,
+  InputStyle,
+  InputStyles,
+  Btn,
+  PwdInput,
+  SmallBtn,
+  Button,
+  Text,
+  ConfirmCode
+} from "./style"
+import { Input, message } from 'antd';
+import { actionCreator} from './store';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios'
-
 const {Password} = Input
+// import {Info} from './info'
 
+function Info(props) {
+  return (
+  <div>
+    <h1>你错了！！！</h1>
+  </div>
+  )
+}
 class Register extends Component {
   constructor(props) {
     super(props)
@@ -74,16 +94,16 @@ class Register extends Component {
                     this.verifyPassword(e)
                   }}
                 />
-              </InputStyle>
-              <Button onClick={() => {
-                this.props.register(this.props.username, this.props.password, this.props.vcode, this.props.phone, this.state.temp)
-              }}>按钮</Button>
-            </div>
-          )
-          }
-
-        </Content>
-      </Wrapper>
+                </InputStyle>
+                <Button onClick={ () => {this.props.register(this.props.username, this.props.password, this.props.vcode, this.props.phone, this.state.temp)}}>注册</Button>
+              </div>
+            )
+           }
+            
+         </Content>
+         {this.props.token && <Redirect to="/home/"></Redirect>}
+         {this.props.status && <Info></Info>}
+        </Wrapper>
 
     );
   }
@@ -117,6 +137,7 @@ const mapStateToProps = state => ({
   phone: state.register.phone,
   vcode: state.register.vcode,
   token: state.register.token,
+  status: state.register.status,
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -23,10 +23,42 @@ export const Warpper = styled.div`
   }
   .ant-tabs-tab {
    font-size: 20px;
+   color: rgb(255, 221, 111);
   }
   .ant-tabs-ink-bar {
     background: rgb(255, 236, 0);
     height: 4px;
     border-radius: 3px;
   }
+`
+
+export const NewCircle = styled.div`
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  background: rgb(64, 108, 255);
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-weight: 200;
+  font-size: 40px;
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+`
+
+export const IconWarpper = styled.div`
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  top: 16px;
+  left: 14px;
+`
+
+export const Menu = styled.div`
+  height: 100px;
+  background: rgb(64, 108, 255);
+  /* position: fixed;
+  top: 0;
+  left: 0; */
 `

@@ -45,6 +45,10 @@ const GlobalStyle = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  textarea {
+    outline: none;
+    border: none;
+  }
 `
 
 export default GlobalStyle

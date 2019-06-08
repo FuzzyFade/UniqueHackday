@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd'
 import {
-  Warpper
+  Warpper,
+  NewCircle,
+  IconWarpper,
+  Menu
 } from './style'
 import ItemList from './components/ItemList/index'
 import { connect } from 'react-redux'
 import { actionCreator } from './store'
-
+import {
+  Link
+} from 'react-router-dom'
+import { Icon } from 'antd'
 const { TabPane } = Tabs
 
 class Home extends Component {
@@ -21,18 +27,25 @@ class Home extends Component {
           <TabPane tab="夜空" key="1">
           </TabPane>
         </Tabs>
+        <IconWarpper>
+          <Icon type="align-left" style={{ fontSize: '20px', color: '#fff' }} />
+        </IconWarpper>
+        <Menu></Menu>
         {/* Switch Tabs End */}
 
         {/* ItemList */}
         <ItemList itemlist={this.props.itemlist}></ItemList>
         {/* ItemList End */}
+        <Link to="/new/">
+          <NewCircle>+</NewCircle>
+        </Link>
       </Warpper>
     );
   }
 }
 
 const mapStateToProps = state => ({
-    itemlist: state.home.itemlists[state.home.currentKey]
+  itemlist: state.home.itemlists[state.home.currentKey]
 })
 
 const mapDispatchToProps = dispatch => {

@@ -37,7 +37,8 @@ const defaultState = {
       }
     ]
   ],
-  currentKey: 0
+  currentKey: 0,
+  isMenuShow: false
 }
 
 export default (state = defaultState, action) => {
