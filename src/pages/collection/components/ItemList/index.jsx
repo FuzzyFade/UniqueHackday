@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import {
   ItemListWarpper,
-  NewCircle
+  ItemBox,
+  ItemHeader,
+  ItemContent
 } from './style'
-import Item from './Item'
 
 class ItemList extends Component {
   render() {
@@ -12,17 +13,17 @@ class ItemList extends Component {
         {
           this.props.itemlist.map(item => {
             return (
-              <Item
-                item={item}
-                key={item.title}
-              />
+              <ItemBox key={item.title}>
+                <ItemHeader>{item.title}</ItemHeader>
+                <ItemContent>{item.content}</ItemContent>
+              </ItemBox>
             )
           })
         }
-        <NewCircle>+</NewCircle>
       </ItemListWarpper>
     )
   }
+
 }
 
 export default ItemList

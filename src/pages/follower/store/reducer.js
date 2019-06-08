@@ -1,6 +1,5 @@
 const defaultState = {
-  text: 'Hello login',
-  username: '吴东泽'
+  text: 'Follow'
 }
 
 export default (state = defaultState, action) => {
