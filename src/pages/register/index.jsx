@@ -11,8 +11,18 @@ import {
   SmallBtn,
 } from "./style"
 import { Input, message } from 'antd';
-import {actionCreator} from './store';
+import { actionCreator} from './store';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios'
+// import {Info} from './info'
+
+function Info(props) {
+  return (
+  <div>
+    <h1>你错了！！！</h1>
+  </div>
+  )
+}
 class Register extends Component {
   constructor(props) {
     super(props)
@@ -62,12 +72,14 @@ class Register extends Component {
                  onChange={ (e) => {this.verifyPassword(e)}}
                 />
                 </InputStyle>
-                <Btn onClick={ () => {this.props.register(this.props.username, this.props.password, this.props.vcode, this.props.phone, this.state.temp)}}>按钮</Btn>
+                <Btn onClick={ () => {this.props.register(this.props.username, this.props.password, this.props.vcode, this.props.phone, this.state.temp)}}>注册</Btn>
               </div>
             )
            }
             
          </Content>
+         {this.props.token && <Redirect to="/home/"></Redirect>}
+         {this.props.status && <Info></Info>}
         </Wrapper>
 
     );
@@ -100,6 +112,7 @@ const mapStateToProps = state => ({
     phone: state.register.phone,
     vcode: state.register.vcode,
     token: state.register.token,
+    status: state.register.status,
 })
 
 const mapDispatchToProps = dispatch => ({
