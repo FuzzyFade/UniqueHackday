@@ -5,7 +5,6 @@ import Home from './pages/home'
 
 import Follow from './pages/follow'
 import Register from './pages/register'
-import Follow from './pages/follow';
 import Message from './pages/message'
 
 

@@ -37,8 +37,34 @@ export const InputStyle = styled.div`
   input:focus {
     outline: none;
   }
-
 `
+export const PwdInput = styled.div`
+  /* display: flex; */
+  span {
+    display: inline;
+  }
+  input {
+    width: 250px;
+    height: 35px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+  input:focus {
+    outline: none;
+  }
+`
+export const SmallBtn = styled.button`
+    width: 85px;
+    height: 35px;
+    margin-left: 15px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: white;
+`
+
 export const LinkContent = styled.div`
   width: 365px;
   font-size: 18px;
@@ -48,7 +74,11 @@ export const LinkContent = styled.div`
     text-decoration: none
   }
 `
-export const Button = styled.div`
+export const firstContent = styled.div`
+  
+`
+
+export const Btn = styled.div`
    width: 350px;
    height: 100px;
    margin-top: 50px;
