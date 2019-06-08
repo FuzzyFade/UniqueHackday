@@ -5,9 +5,6 @@ import {
   Content,
   Logo,
   InputStyle,
-  InputStyles,
-  Btn,
-  PwdInput,
   SmallBtn,
   Button,
   Text,
@@ -95,11 +92,17 @@ class Register extends Component {
                   }}
                 />
                 </InputStyle>
-                <Button onClick={ () => {this.props.register(this.props.username, this.props.password, this.props.vcode, this.props.phone, this.state.temp)}}>注册</Button>
+                <Button onClick={ () => {this.props.register(
+                  this.props.username,
+                  this.props.password,
+                  this.props.vcode,
+                  this.props.phone,
+                  this.state.temp
+                )}}>注册</Button>
               </div>
             )
            }
-            
+
          </Content>
          {this.props.token && <Redirect to="/home/"></Redirect>}
          {this.props.status && <Info></Info>}

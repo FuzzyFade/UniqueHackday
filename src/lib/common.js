@@ -1,12 +1,13 @@
 import axios from 'axios'
 
-async function get(path) {
+async function get(path, token) {
   const baseUrl = 'https://star.exql.top'
   let url = baseUrl.concat(path)
   let ret = await new Promise(resolve => {
     axios({
       method: 'get',
-      url
+      url,
+      headers: {'Authorization': `stars ${token}`}
     })
     .then(res => resolve(res.data))
   })
@@ -21,7 +22,7 @@ async function post(path, data, token) {
       method: 'post',
       url,
       data,
-      headers: {'Authorization': `${token}`}
+      headers: {'Authorization': `stars ${token}`}
     })
     .then(res => resolve(res.data))
   })
