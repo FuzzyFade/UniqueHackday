@@ -32,5 +32,5 @@ async function post(path, data, token) {
 
 export {
   get,
-  post
+  post,
 }

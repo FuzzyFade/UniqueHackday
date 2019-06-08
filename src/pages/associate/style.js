@@ -79,3 +79,19 @@ export const AssociateBtn = styled.div`
   color: #fff;
   border-radius: 20px;
 `
+
+export const LabelInput = styled.input.attrs({
+  placeholder: '请输入你要联想的内容'
+})`
+  font-size: 18px;
+  height: 80px;
+  width: 100%;
+  padding: 0 10px;
+  border: none;
+  border-bottom: 1px solid white;
+  background: rgb(64,108,255);
+  &:focus{
+    outline:none
+  }
+`
+
