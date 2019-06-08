@@ -71,9 +71,9 @@ class Mine extends Component {
                 </Name>
               </UserContainer>
               <ItemContainer>
-                <SonNumber>3</SonNumber>
-                <Line> / </Line>
-                <MomNumber>30</MomNumber>
+                  <SonNumber>3</SonNumber>
+                  <Line>/</Line>
+                  <MomNumber>30</MomNumber>
               </ItemContainer>
             </UserLayOut>
             <Circle na={(210 - valueY) / 210}/>
