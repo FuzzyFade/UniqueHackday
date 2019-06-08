@@ -15,9 +15,9 @@ import { Icon, message } from 'antd'
 import axios from 'axios';
 
 function ItemList(props) {
-  // const data = props
+  const data = props.data
   // console.log(props)
-  let data = ["你是谁你是谁你是爱玩屎的阿拉蕾", "你是谁的白衣少年什么歌", "你是谁你是谁", "你是谁为了谁是什么歌", "你是谁韩剧", "你是谁歌词", "你是谁的英文", "你是谁实验"]
+  // let data = ["你是谁你是谁你是爱玩屎的阿拉蕾", "你是谁的白衣少年什么歌", "你是谁你是谁", "你是谁为了谁是什么歌", "你是谁韩剧", "你是谁歌词", "你是谁的英文", "你是谁实验"]
   // if (props) {
   //    data = props.data
   // }
@@ -68,7 +68,7 @@ class Associate extends Component {
           url,
           headers: {'Authorization': `Stars ${this.props.token}`}
         }).then(
-          ()=> {message.info("联想成功")}
+          (res)=> {message.info("联想成功") ;this.setState({ret:res.data })}
         ).catch( ()=> {message.info("联想失败")})
       }
     )
