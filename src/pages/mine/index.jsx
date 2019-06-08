@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Avatar, Circle, Name, Navigation, TopLayOut, TopContent, User, Wrapper} from './style'
 import {Icon} from 'antd'
 
-class SideBar extends Component {
+class Mine extends Component {
   render() {
     const {username} = this.props;
     return (
@@ -28,12 +28,12 @@ class SideBar extends Component {
 }
 
 const mapStateToProps = state => ({
-  text: state.sidebar.text,
-  username: state.sidebar.username
+  text: state.mine.text,
+  username: state.mine.username
 })
 
 const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SideBar)
+export default connect(mapStateToProps, mapDispatchToProps)(Mine)
