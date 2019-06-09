@@ -5,9 +5,10 @@ import {
 } from './constants'
 
 const defaultState = {
-  token: '',
-  username: '',
+  token: 'eyJhbGciOiJIUzUxMiIsImlhdCI6MTU2MDAyNTE5OCwiZXhwIjoxNTYwMzI1MTk4fQ.eyJpZCI6MiwiZXhwIjoxNTYwMzI1MTk4LCJ1c2VybmFtZSI6InRlc3QyIn0.krI4vRe4sgjROu_6A5VBvivZlm09B1Lclh3dMIU8mp6VzjrneZCiyXSNTANt_CWryeYJjFUl3BntctcGzuaeNQ',
+  username: '孙翔宇',
   password: '',
+  avatar: 2
 }
 
 export default (state = defaultState, action) => {

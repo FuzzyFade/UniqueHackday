@@ -1,11 +1,16 @@
+import {POST_LIST} from "../../mine/store/constants";
+
 const defaultState = {
-  text: 'Hello login',
-  username: '吴东泽',
-  avatar: 2,
+  head_pic:2
 }
 
 export default (state = defaultState, action) => {
-  return {
-    ...state
+  let newState = JSON.parse(JSON.stringify(state))
+  switch(action.type) {
+    case POST_LIST:
+      newState = action.value;
+      return newState
+    default:
+      return newState
   }
 }
