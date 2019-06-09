@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {AssociateBtn, Blanket, Header, HeaderLeft, HeaderTitle, ItemBubble, LabelInput, Warpper} from './style'
+import {AssociateBtn, ItemContainer, Blanket, Header, HeaderLeft, HeaderTitle, ItemBubble, LabelInput, Warpper} from './style'
 import {Icon, message} from 'antd'
 import axios from 'axios';
+import {
+  Link
+} from 'react-router-dom'
 
 class Associate extends Component {
   constructor(props) {
@@ -24,7 +27,11 @@ class Associate extends Component {
       <Warpper>
         <Header>
           <HeaderLeft>
-            <Icon type="left" style={{fontSize: '24px', color: '#fff', marginLeft: '16px'}}/>
+            <Link to="/new/">
+              <Icon type="left"
+                    style={{fontSize: '24px', color: '#fff', marginLeft: '16px'}}
+              />
+            </Link>
             <HeaderTitle>联想</HeaderTitle>
           </HeaderLeft>
         </Header>
@@ -32,16 +39,18 @@ class Associate extends Component {
           <LabelInput onChange={(e) => {
             this.setState({word: e.target.value})
           }} value={this.state.word}/>
-          {
-            this.state.ret.map(
-              (item, index) =>
-                <ItemBubble
-                  key={index}
-                  onClick={() => this.setState({word: item})}
-                >
-                  {item}
-                </ItemBubble>)
-          }
+          <ItemContainer style={{display: this.state.ret.length === 0 && 'none'}}>
+            {
+              this.state.ret.map(
+                (item, index) =>
+                  <ItemBubble
+                    key={index}
+                    onClick={() => this.setState({word: item})}
+                  >
+                    {item}
+                  </ItemBubble>)
+            }
+          </ItemContainer>
           <AssociateBtn onClick={() => {
             this.getAssociate()
           }}>联想</AssociateBtn>
