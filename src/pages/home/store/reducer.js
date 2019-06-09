@@ -1,5 +1,7 @@
 import {
-  CHANGE_KEY
+  CHANGE_KEY,
+  SET_IDEA_LIST,
+  SET_SQUARE_LIST
 } from './constant'
 
 const defaultState = {
@@ -46,6 +48,12 @@ export default (state = defaultState, action) => {
   switch(action.type) {
     case CHANGE_KEY:
       newState.currentKey = action.value
+      return newState
+    case SET_IDEA_LIST:
+      newState.itemlists[0] = action.value
+      return newState
+    case SET_SQUARE_LIST:
+      newState.itemlists[1] = action.value
       return newState
     default:
       return newState

@@ -62,7 +62,7 @@ class Associate extends Component {
   async getAssociate() {
     let params = {"word": this.state.word};
     let url = 'https://star.exql.top/api/idea/associate';
-    let ret = await new Promise(
+    await new Promise(
       resolve => {
         axios({
           method: 'get',

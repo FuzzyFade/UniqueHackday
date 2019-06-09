@@ -21,7 +21,7 @@ import {
   Wrapper
 } from './style'
 import {Avatar, Card, Icon} from 'antd'
-import {Redirect, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import 'antd/dist/antd.css';
 import {actionCreator} from "./store";
 
@@ -48,7 +48,7 @@ class Mine extends Component {
   }
 
   render() {
-    const {username, head_pic, token} = this.props;
+    const {username, head_pic} = this.props;
     const {idea, star, follower, followed, finish} = this.props;
     const {valueY} = this.state;
     return (
