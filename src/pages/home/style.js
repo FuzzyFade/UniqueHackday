@@ -45,6 +45,7 @@ export const NewCircle = styled.div`
   position: fixed;
   right: 20px;
   bottom: 40px;
+  filter: drop-shadow(0 6px 8px rgba(122,122,122,0.5));
 `
 
 export const IconWarpper = styled.div`
