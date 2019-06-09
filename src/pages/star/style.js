@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import pig from './img/pig.jpg'
-export const Warpper = styled.div``
+export const Warpper = styled.div`
+`
 
 export const Header = styled.div`
   height: 50px;
@@ -50,6 +51,7 @@ export const ItemBox = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 2px 2px #eee;
   margin-bottom: 20px;
+  color: #000 !important;
 `
 
 export const ItemHeader = styled.div`

@@ -31,8 +31,7 @@ class Star extends Component {
           </HeaderLeft>
           <HeaderRight>发布</HeaderRight>
         </Header>
-        <ItemBox
-        >
+        <ItemBox>
           <ItemHeader>
             <ItemHeaderRight>
               <ItemAvatar></ItemAvatar>

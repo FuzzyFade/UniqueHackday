@@ -49,6 +49,9 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     border: none;
   }
+  a {
+    color: inherit;
+  }
 `
 
 export default GlobalStyle

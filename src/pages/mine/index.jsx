@@ -21,7 +21,7 @@ import {
   Wrapper
 } from './style'
 import {Avatar, Card, Icon} from 'antd'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import 'antd/dist/antd.css';
 import {actionCreator} from "./store";
 
@@ -94,21 +94,27 @@ class Mine extends Component {
                 <CardText>ideas</CardText>
                 <Num>{idea}</Num>
               </CardItem>
-              <CardItem>
-                <Icon type="star" style={{fontSize: `33px`}} theme="twoTone"/>
-                <CardText>stars</CardText>
-                <Num>{star}</Num>
-              </CardItem>
-              <CardItem>
-                <Icon type="like" style={{fontSize: `33px`}} theme="twoTone"/>
-                <CardText>关注</CardText>
-                <Num>{follower}</Num>
-              </CardItem>
-              <CardItem>
-                <Icon type="heart" style={{fontSize: `33px`}} theme="twoTone"/>
-                <CardText>粉丝</CardText>
-                <Num>{followed}</Num>
-              </CardItem>
+              <Link to="/star/">
+                <CardItem>
+                  <Icon type="star" style={{fontSize: `33px`}} theme="twoTone"/>
+                  <CardText>stars</CardText>
+                  <Num>{star}</Num>
+                </CardItem>
+              </Link>
+              <Link to="/following/">
+                <CardItem>
+                  <Icon type="like" style={{fontSize: `33px`}} theme="twoTone"/>
+                  <CardText>关注</CardText>
+                  <Num>{follower}</Num>
+                </CardItem>
+              </Link>
+              <Link to="/follower/">
+                <CardItem>
+                  <Icon type="heart" style={{fontSize: `33px`}} theme="twoTone"/>
+                  <CardText>粉丝</CardText>
+                  <Num>{followed}</Num>
+                </CardItem>
+              </Link>
             </CardContainer>
           </Card>
           <Card style={{width: 300, borderRadius: '10px', marginBottom: '15px'}}>

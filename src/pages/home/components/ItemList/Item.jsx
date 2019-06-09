@@ -9,6 +9,9 @@ import {
   ItemTime,
   InfoBox,
 } from './style'
+import {
+  Link
+} from 'react-router-dom'
 
 export default class Item extends Component {
 
@@ -24,21 +27,23 @@ export default class Item extends Component {
 
   render() {
     return (
-      <ItemBox
-        key={this.props.item.title}
-        isDisabled={this.state.isDisabled}
-      >
-        <ItemHeader>
-          <ItemHeaderRight>
-            <ItemAvatar></ItemAvatar>
-            <InfoBox>
-              <ItemName>粥结轮</ItemName>
-              <ItemTime>20分钟前</ItemTime>
-            </InfoBox>
-          </ItemHeaderRight>
-        </ItemHeader>
-        <ItemContent>{this.props.item.content}</ItemContent>
-      </ItemBox>
+      <Link to="/star/">
+        <ItemBox
+          key={this.props.item.title}
+          isDisabled={this.state.isDisabled}
+        >
+          <ItemHeader>
+            <ItemHeaderRight>
+              <ItemAvatar></ItemAvatar>
+              <InfoBox>
+                <ItemName>粥结轮</ItemName>
+                <ItemTime>20分钟前</ItemTime>
+              </InfoBox>
+            </ItemHeaderRight>
+          </ItemHeader>
+          <ItemContent>{this.props.item.content}</ItemContent>
+        </ItemBox>
+      </Link>
     );
   }
 
