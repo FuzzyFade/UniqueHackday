@@ -64,7 +64,7 @@ class Register extends Component {
               </ConfirmCode>
               <Button onClick={() => {
                 this.setState({isShow: false})
-              }}>下一页</Button>
+              }}>下一步</Button>
             </div>
           ) : (
             <div>
