@@ -54,11 +54,3 @@ export const IconWarpper = styled.div`
   top: 16px;
   left: 14px;
 `
-
-export const Menu = styled.div`
-  height: 100px;
-  background: rgb(64, 108, 255);
-  /* position: fixed;
-  top: 0;
-  left: 0; */
-`

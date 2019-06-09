@@ -54,7 +54,9 @@ class Mine extends Component {
     return (
       <Wrapper>
         <TopNav style={{display: valueY <= 210 && 'none'}}>
-          <Icon type="left" style={{color: `#fff`, fontSize: `22px`, margin: `0 8px`}}/>
+          <Link to="/home/">
+            <Icon type="left" style={{color: `#fff`, fontSize: `22px`, margin: `0 8px`}}/>
+          </Link>
           <Name>{username}</Name>
           <div style={{width: 38, height: 22}}/>
         </TopNav>
