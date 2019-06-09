@@ -3,8 +3,7 @@ import { Tabs } from 'antd'
 import {
   Warpper,
   NewCircle,
-  IconWarpper,
-  Menu
+  IconWarpper
 } from './style'
 import ItemList from './components/ItemList/index'
 import { connect } from 'react-redux'
@@ -16,6 +15,11 @@ import { Icon } from 'antd'
 const { TabPane } = Tabs
 
 class Home extends Component {
+
+  componentDidMount() {
+    this.props.getIdeaListInit(this.props.token)
+  }
+
   render() {
     return (
       <Warpper>
@@ -45,13 +49,17 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  itemlist: state.home.itemlists[state.home.currentKey]
+  itemlist: state.home.itemlists[state.home.currentKey],
+  token: state.login.token
 })
 
 const mapDispatchToProps = dispatch => {
   return {
     changeKey(key) {
       dispatch(actionCreator.changeCurrentKeyAction(key))
+    },
+    getIdeaListInit(token) {
+      dispatch(actionCreator.getIdeaInitAction(token))
     }
   }
 }

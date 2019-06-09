@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {
   ItemListWarpper,
-  NewCircle
 } from './style'
 import Item from './Item'
 

@@ -46,24 +46,4 @@ export default class Item extends Component {
       </Link>
     );
   }
-
-  // touchStart() {
-  //   console.log('touch start')
-  //   this.setState({
-  //     startTimeStamp: new Date(),
-  //     timerId: setTimeout(() => {
-  //       this.setState({
-  //         isDisabled: true
-  //       })
-  //     }, 700)
-  //   })
-  // }
-
-  // touchEnd() {
-  //   console.log('touch end')
-  //   this.setState({
-  //     endTimeStamp: new Date()
-  //   })
-  //   clearTimeout(this.state.timerId)
-  // }
 }
