@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Tabs } from 'antd'
+import { Tabs, Drawer } from 'antd'
 import {
   Warpper,
   NewCircle,
-  IconWarpper
+  IconWarpper,
 } from './style'
 import ItemList from './components/ItemList/index'
 import { connect } from 'react-redux'
@@ -16,9 +16,30 @@ const { TabPane } = Tabs
 
 class Home extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      visible: false
+    }
+    this.onClose = this.onClose.bind(this)
+    this.showDrawer = this.showDrawer.bind(this)
+  }
+
   componentDidMount() {
     this.props.getIdeaListInit(this.props.token)
   }
+
+  onClose = () => {
+    this.setState({
+      visible: false,
+    });
+  };
+
+  showDrawer = () => {
+    this.setState({
+      visible: true,
+    });
+  };
 
   render() {
     return (
@@ -32,9 +53,8 @@ class Home extends Component {
           </TabPane>
         </Tabs>
         <IconWarpper>
-          <Icon type="align-left" style={{ fontSize: '20px', color: '#fff' }} />
+          <Icon type="align-left" style={{ fontSize: '20px', color: '#fff' }} onClick={this.showDrawer}/>
         </IconWarpper>
-        {/* <Menu></Menu> */}
         {/* Switch Tabs End */}
 
         {/* ItemList */}
@@ -43,6 +63,21 @@ class Home extends Component {
         <Link to="/new/">
           <NewCircle>+</NewCircle>
         </Link>
+        <Drawer
+          title="Where to go?"
+          placement="left"
+          closable={true}
+          onClose={this.onClose}
+          visible={this.state.visible}
+        >
+          <Link to="/home/">
+            <p>首页</p>
+          </Link>
+          <Link to="/message/">
+            <p>我的消息</p>
+          </Link>
+          <p>我的Stars</p>
+        </Drawer>
       </Warpper>
     );
   }

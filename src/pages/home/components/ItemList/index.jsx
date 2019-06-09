@@ -14,6 +14,7 @@ class ItemList extends Component {
               <Item
                 item={item}
                 key={item.title}
+                time={item.create_time}
               />
             )
           })

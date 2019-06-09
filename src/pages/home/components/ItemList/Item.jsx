@@ -37,7 +37,7 @@ export default class Item extends Component {
               <ItemAvatar></ItemAvatar>
               <InfoBox>
                 <ItemName>粥结轮</ItemName>
-                <ItemTime>20分钟前</ItemTime>
+                <ItemTime>{this.props.time}</ItemTime>
               </InfoBox>
             </ItemHeaderRight>
           </ItemHeader>
