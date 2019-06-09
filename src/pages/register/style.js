@@ -70,4 +70,5 @@ export const ConfirmCode = styled.div`
 export const Text = styled.div`
   color: #686868;
   letter-spacing: .8px;
+  font-size: 15px;
 `

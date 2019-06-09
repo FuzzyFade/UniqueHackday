@@ -58,7 +58,7 @@ class Home extends Component {
         {/* Switch Tabs End */}
 
         {/* ItemList */}
-        <ItemList itemlist={this.props.itemlist}></ItemList>
+        <ItemList itemlist={this.props.itemlist}/>
         {/* ItemList End */}
         <Link to="/new/">
           <NewCircle>+</NewCircle>

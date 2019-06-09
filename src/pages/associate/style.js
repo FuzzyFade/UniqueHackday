@@ -45,20 +45,28 @@ export const Blanket = styled.div`
 `
 
 export const ItemBubble = styled.div`
+  display: block;
   height: 35px;
-  padding: 4px 8px;
-  max-width: 400px;
-  min-width: 300px;
-  margin: 8px 0;
+  padding: 4px 20px;
+  margin: 10px 8px;
   border-radius: 20px;
   background: #fff;
   border: 1px solid #eee;
   text-align: center;
   font-size: 14px;
+  filter: drop-shadow(0 6px 8px rgba(25,47,91,0.3));
+`
+
+export const ItemContainer = styled.div`
+  padding: 17px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 `
 
 export const AssociateBtn = styled.div`
-  margin-top: 20px;
+  margin: 20px 0;
   height: 36px;
   max-width: 400px;
   min-width: 300px;
