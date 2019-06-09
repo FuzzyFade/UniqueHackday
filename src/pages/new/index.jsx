@@ -12,7 +12,7 @@ import {
 import {
   Link, Redirect
 } from 'react-router-dom'
-import { Icon, message, Modal} from 'antd'
+import { Icon, message, Modal, Button} from 'antd'
 import axios from 'axios';
 
 class New extends Component {
@@ -41,12 +41,18 @@ class New extends Component {
           </HeaderLeft>
           <HeaderRight onClick={ () => {this.showModal()}}>发布</HeaderRight>
         </Header>
+        <Link to="/associate/">
+          <Button style={{
+            position: 'absolute',
+            right: 12,
+            top: 112}}
+          >联想</Button>
+        </Link>
         <TextTitle onChange={ (e)=> {this.setState({textTitle: e.target.value}) }}>
         </TextTitle>
         <TextDesc onChange={ (e) => {this.setState({textDesc: e.target.value})}}>
         </TextDesc>
         <Modal
-          title="Basic Modal"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
@@ -104,7 +110,7 @@ class New extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  
+
 })
 
 const mapStateToProps = state => ({
