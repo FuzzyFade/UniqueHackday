@@ -6,6 +6,9 @@ import {
 } from './style'
 import { Tabs, Icon } from 'antd'
 import MessageList from './components/MessageList/index'
+import {
+  Link
+} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { 
   actionCreator
@@ -17,7 +20,9 @@ class Message extends Component {
     return (
       <Warpper>
         <Header>
-          <Icon type="left" style={{ fontSize: '24px', color: '#eee', marginLeft: '16px'}}/>
+          <Link to="/mine/">
+            <Icon type="left" style={{ fontSize: '24px', color: '#eee', marginLeft: '16px'}}/>
+          </Link>
           <HeaderTitle>我的消息</HeaderTitle>
         </Header>
 

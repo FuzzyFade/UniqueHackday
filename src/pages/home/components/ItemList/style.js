@@ -7,6 +7,9 @@ export const ItemListWarpper = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  a {
+    color: #000;
+  }
 `
 
 export const ItemBox = styled.div`
