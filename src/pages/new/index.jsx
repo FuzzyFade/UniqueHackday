@@ -10,6 +10,9 @@ import {
   TextDesc
 } from './style'
 import { Icon } from 'antd'
+import {
+  Link
+} from 'react-router-dom'
 
 class New extends Component {
   render() {
@@ -17,7 +20,9 @@ class New extends Component {
       <Warpper>
         <Header>
           <HeaderLeft>
-            <Icon type="left" style={{ fontSize: '24px', color: '#fff', marginLeft: '16px'}}/>
+            <Link to="/home/">
+              <Icon type="left" style={{ fontSize: '24px', color: '#fff', marginLeft: '16px'}}/>
+            </Link>
             <HeaderTitle>打火石</HeaderTitle>
           </HeaderLeft>
           <HeaderRight>发布</HeaderRight>

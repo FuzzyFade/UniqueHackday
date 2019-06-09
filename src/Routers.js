@@ -11,6 +11,7 @@ import New from './pages/new'
 import Mine from './pages/mine'
 import Comment from './pages/comment'
 import Associate from './pages/associate'
+import Star from './pages/star'
 
 function Routers() {
   return (
@@ -26,6 +27,7 @@ function Routers() {
       <Route exact path="/mine/" component={Mine} />
       <Route exact path="/comment/" component={Comment} />
       <Route exact path="/associate/" component={Associate} />
+      <Route exact path="/star/" component={Star} />
     </Router>
   )
 }
