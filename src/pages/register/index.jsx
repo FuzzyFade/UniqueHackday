@@ -27,7 +27,7 @@ function Info(props) {
 class Register extends Component {
   constructor(props) {
     super(props)
-    this.state = {isShow: true, temp: ''}
+    this.state = {isShow: true, temp: '', time: "获取验证码"}
     this.getVcode = this.getVcode.bind(this)
     this.verifyPassword = this.verifyPassword.bind(this)
   }
@@ -59,7 +59,7 @@ class Register extends Component {
                   style={{width: '107px', borderColor: '#C1C1C1'}}
                   onClick={() => this.getVcode(this.props.phone)}
                 >
-                  <Text>获取验证码</Text>
+                  <Text>{this.state.time}</Text>
                 </SmallBtn>
               </ConfirmCode>
               <Button onClick={() => {
@@ -112,6 +112,30 @@ class Register extends Component {
   }
 
   async getVcode(phone) {
+    this.setState({time: 60})
+  //  var wait = 60
+  //   function time() {
+  //     if (this.state.time == 0) {
+  //       this.setState({time: '重新发送'})
+  //       wait = 60
+  //     } else {
+  //       wait--
+  //       setTimeout(function(){
+  //         time()
+  //       },1000)
+  //     }
+  //   }
+   
+    var t1 = window.setInterval(()=>{
+      this.setState({time: --this.state.time})
+      if (this.state.time === 0) {
+        window.clearTimeout(t1)
+        this.setState({time: '重新发送'})
+      }
+    },1000)
+
+   
+
     console.log("phone", phone)
     let data = {"phone": phone}
     let url = 'https://star.exql.top/api/user/msg'
